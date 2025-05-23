@@ -64,7 +64,7 @@ extra:
       link: https://www.youtube.com/user/developerworks
     - icon: fontawesome/brands/dev
       link: https://dev.to/ibmdeveloper
-  colab_url: https://colab.research.google.com/github/IBM/granite-workshop
+  colab_url: https://colab.research.google.com/github/WiDSIreland/WiDSIrelandLab2025
 
 # Extensions
 markdown_extensions:
