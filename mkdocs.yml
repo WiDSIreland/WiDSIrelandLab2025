@@ -12,7 +12,7 @@ edit_uri: edit/main/docs
 
 # Source Docs & Site Docs
 docs_dir: "docs"
-site_dir: "site"
+#site_dir: "site"
 
 # navigation
 nav:
