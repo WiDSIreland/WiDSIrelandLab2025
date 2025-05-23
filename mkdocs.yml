@@ -32,6 +32,7 @@ copyright: Copyright &copy; 2024- IBM Research
 # Theme
 theme:
   name: material
+  custom_dir: overrides
   font:
     text: IBM Plex Sans
     code: IBM Plex Mono
@@ -42,7 +43,6 @@ theme:
   features:
     - navigation.tabs
     - navigation.footer
-    #- navigation.instant
     - content.code.copy
   palette:
     scheme: default
