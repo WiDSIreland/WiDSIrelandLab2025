@@ -49,12 +49,7 @@ theme:
     primary: blue
     accent: blue
 
-# Plugins
-plugins:
-  - search
-  - social
-  - macros:
-      on_undefined: strict
+
 
 # Customization
 extra:
