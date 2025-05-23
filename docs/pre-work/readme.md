@@ -79,13 +79,13 @@ uv 0.6.12 (e4e03833f 2025-04-02)
 Clone the workshop repo and cd into the repo directory.
 
 ```shell
-git clone https://github.com/WiDSIreland/WiDSIrelandLab2025
-cd sample-wids
+git clone https://github.com/WiDSIreland/WiDSIrelandLab2025.git
+cd WiDSIrelandLab2025
 ```
 
 #### Sync the Python Virtual Environment
 
-The Sample WiDS repository uses a `pyproject.toml` file to define the version of Python to use and the required libraries to load. To sync your repository and setup Python and download the library dependancies run `uv sync` in a terminal. After syncing you have to activate your virtual environment.
+The WiDS repository uses a `pyproject.toml` file to define the version of Python to use and the required libraries to load. To sync your repository and setup Python and download the library dependancies run `uv sync` in a terminal. After syncing you have to activate your virtual environment.
 
 **Note:**
 
