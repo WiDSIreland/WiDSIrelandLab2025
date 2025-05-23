@@ -1052,11 +1052,11 @@ uv<span class="w"> </span><span class="m">0</span>.6.12<span class="w"> </span><
 </code></pre></div>
 <h4 id="clone-the-granite-workshop-repository">Clone the Granite Workshop Repository<a class="headerlink" href="#clone-the-granite-workshop-repository" title="Permanent link">&para;</a></h4>
 <p>Clone the workshop repo and cd into the repo directory.</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/WiDSIreland/WiDSIrelandLab2025
-<span class="nb">cd</span><span class="w"> </span>sample-wids
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/WiDSIreland/WiDSIrelandLab2025.git
+<span class="nb">cd</span><span class="w"> </span>WiDSIrelandLab2025
 </code></pre></div>
 <h4 id="sync-the-python-virtual-environment">Sync the Python Virtual Environment<a class="headerlink" href="#sync-the-python-virtual-environment" title="Permanent link">&para;</a></h4>
-<p>The Sample WiDS repository uses a <code>pyproject.toml</code> file to define the version of Python to use and the required libraries to load. To sync your repository and setup Python and download the library dependancies run <code>uv sync</code> in a terminal. After syncing you have to activate your virtual environment.</p>
+<p>The WiDS repository uses a <code>pyproject.toml</code> file to define the version of Python to use and the required libraries to load. To sync your repository and setup Python and download the library dependancies run <code>uv sync</code> in a terminal. After syncing you have to activate your virtual environment.</p>
 <p><strong>Note:</strong></p>
 <p>If running on Windows it is suggested that you use the Windows Powershell running as administrator or, if you have it installed, the Windows Subsystem for Linux.</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>sync
