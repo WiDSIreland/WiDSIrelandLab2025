@@ -1,9 +1,8 @@
 ---
 title: Women in Data Science Workshop Pre-work
-description: Preparation for the Women in Data Science Workshop
+description: Preparation for the WiDS Workshop
 logo: images/ibm-blue-background.png
 ---
-
 
 # Pre-work
 
@@ -11,19 +10,19 @@ The labs in this workshop are [Jupyter notebooks](https://jupyter.org/). The not
 
 - [Pre-work](#pre-work)
   - [Running the Granite Notebooks](#running-the-granite-notebooks)
-  - [Running the Granite Notebooks Locally](#running-the-granite-notebooks-locally)
-  - [Local Prerequisites](#local-prerequisites)
-    - [Git](#git)
-    - [Uv](#uv)
-  - [Clone the Granite Workshop Repository](#clone-the-granite-workshop-repository)
-    - [Sync the Python Virtual Environment](#sync-the-python-virtual-environment)
-    - [Serving the Granite AI Models](#serving-the-granite-ai-models)
-      - [Replicate AI Cloud Platform](#replicate-ai-cloud-platform)
-      - [Running Ollama Locally](#running-ollama-locally)
-  - [Running the Granite Notebooks Remotely (Colab)](#running-the-granite-notebooks-remotely-colab)
-    - [Colab Prerequisites](#colab-prerequisites)
-    - [Serving the Granite AI Models for Colab](#serving-the-granite-ai-models-for-colab)
-      - [Replicate AI Cloud Platform for Colab](#replicate-ai-cloud-platform-for-colab)
+    - [Running the Granite Notebooks Locally](#running-the-granite-notebooks-locally)
+      - [Local Prerequisites](#local-prerequisites)
+        - [Git](#git)
+        - [Uv](#uv)
+      - [Clone the Granite Workshop Repository](#clone-the-granite-workshop-repository)
+      - [Sync the Python Virtual Environment](#sync-the-python-virtual-environment)
+      - [Serving the Granite AI Models](#serving-the-granite-ai-models)
+        - [Replicate AI Cloud Platform](#replicate-ai-cloud-platform)
+        - [Running Ollama Locally](#running-ollama-locally)
+    - [Running the Granite Notebooks Remotely (Colab)](#running-the-granite-notebooks-remotely-colab)
+      - [Colab Prerequisites](#colab-prerequisites)
+      - [Serving the Granite AI Models for Colab](#serving-the-granite-ai-models-for-colab)
+        - [Replicate AI Cloud Platform for Colab](#replicate-ai-cloud-platform-for-colab)
 
 
 ## Running the Granite Notebooks
@@ -31,11 +30,11 @@ The labs in this workshop are [Jupyter notebooks](https://jupyter.org/). The not
 The notebooks can be run:
 
 - [Locally on your computer](#running-the-granite-notebooks-locally) OR
-- [Remotely on the Google Colab service](#running-the-granite-notebooks-remotely-colab)
+- [Remotely using Google Colab service](#running-the-granite-notebooks-remotely-colab)
 
 Follow the instructions in one of the sections that follow on how you would like to run the notebooks.
 
-## Running the Granite Notebooks Locally
+### Running the Granite Notebooks Locally
 
 It is recommended if you want to run the lab notebooks locally on your computer that you have:
 
@@ -44,12 +43,12 @@ It is recommended if you want to run the lab notebooks locally on your computer 
 
 Running the lab notebooks locally on your computer requires the following steps:
 
-## Local Prerequisites
+#### Local Prerequisites
 
 - Git
 - Uv
 
-### Git
+##### Git
 
 Git can be installed on the most common operating systems like Windows,  Mac, and Linux. In fact, Git comes installed by default on most Mac and  Linux machines!
 
@@ -62,7 +61,7 @@ git version
 git version 2.39.5 (Apple Git-154)
 ```
 
-### Uv
+##### Uv
 
 `uv` is an extremely fast Python package and project manager, written in Rust.
 
@@ -75,7 +74,7 @@ uv --version
 uv 0.6.12 (e4e03833f 2025-04-02)
 ```
 
-## Clone the Granite Workshop Repository
+#### Clone the Granite Workshop Repository
 
 Clone the workshop repo and cd into the repo directory.
 
@@ -84,7 +83,7 @@ git clone https://github.com/WiDSIreland/WiDSIrelandLab2025
 cd sample-wids
 ```
 
-### Sync the Python Virtual Environment
+#### Sync the Python Virtual Environment
 
 The Sample WiDS repository uses a `pyproject.toml` file to define the version of Python to use and the required libraries to load. To sync your repository and setup Python and download the library dependancies run `uv sync` in a terminal. After syncing you have to activate your virtual environment.
 
@@ -102,14 +101,14 @@ source .venv/bin/activate
 .venv\Scripts\activate
 ```
 
-### Serving the Granite AI Models
+#### Serving the Granite AI Models
 
 [Lab 1: Document Summarization with Granite](../lab-1/readme.md) and [Lab 2: Retrieval Augmented Generation (RAG) with Langchain](../lab-2/readme.md) require Granite models to be served by an AI model runtime so that the models can be invoked or called. There are 2 options to serve the models as follows:
 
 - [Replicate AI Cloud Platform](#replicate-ai-cloud-platform)
 - [Running Ollama Locally](#running-ollama-locally) OR
 
-#### Replicate AI Cloud Platform
+##### Replicate AI Cloud Platform
 
 [Replicate](https://replicate.com/) is a cloud platform that will host and serve AI models for you.
 
@@ -127,7 +126,7 @@ source .venv/bin/activate
     export REPLICATE_API_TOKEN=<your_replicate_api_token>
     ```
 
-#### Running Ollama Locally
+##### Running Ollama Locally
 
 If you want to run the AI models locally on your computer, you can use [Ollama](https://ollama.com/). You will need to have a computer with:
 
@@ -162,7 +161,7 @@ Running Ollama locally on your computer requires the following steps:
     ollama pull granite3.2:8b
     ```
 
-## Running the Granite Notebooks Remotely (Colab)
+### Running the Granite Notebooks Remotely (Colab)
 
 Running the lab notebooks remotely using [Google Colab](https://colab.research.google.com) requires the following steps:
 
@@ -171,15 +170,15 @@ Running the lab notebooks remotely using [Google Colab](https://colab.research.g
 
 !!! note "Notebook execution speed tip" The default execution runtime in Colab uses a CPU. Consider using a different Colab runtime to increase execution speed, especially in situations where you may have other constraints such as a slow network connection. From the navigation bar, select `Runtime->Change runtime type`, then select either GPU- or TPU-based hardware acceleration.
 
-### Colab Prerequisites
+#### Colab Prerequisites
 
 - [Google Colab](https://colab.research.google.com) requires a Google account that you're logged into
 
-### Serving the Granite AI Models for Colab
+#### Serving the Granite AI Models for Colab
 
 [Lab 1: Document Summarization with Granite](../lab-1/readme.md) and [Lab 2: Retrieval Augmented Generation (RAG) with Langchain](../lab-2/readme.md) and  require Granite models to be served by an AI model runtime so that the models can be invoked or called.
 
-#### Replicate AI Cloud Platform for Colab
+##### Replicate AI Cloud Platform for Colab
 
 [Replicate](https://replicate.com/) is a cloud platform that will host and serve AI models for you.
 
