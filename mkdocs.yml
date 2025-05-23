@@ -17,7 +17,7 @@ docs_dir: "docs"
 # navigation
 nav:
   - Welcome:
-      - About the workshop: docs/index.md
+      - About the workshop: index.md
   - Workshop:
       - Lab 0. Pre-work: pre-work/readme.md
       - Lab 1. Summarize a text document with Granite: lab-1/readme.md
