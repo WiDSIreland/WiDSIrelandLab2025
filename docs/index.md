@@ -19,7 +19,7 @@ By the end of this workshop, you will be able to:
 
 ## About this workshop
 
-The introductory page of the workshop is broken down into the following sections:
+The introductory page of the workshop is broken down into the following sections:  
 - [Introduction](#introduction)
 - [About this workshop](#about-this-workshop)
   - [Agenda](#agenda)

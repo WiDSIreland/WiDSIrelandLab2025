@@ -8,7 +8,7 @@ site_description: Women in Data Science Page
 # Repository
 repo_name: WiDSIrelandLab2025
 repo_url: https://github.com/WiDSIreland/WiDSIrelandLab2025
-#edit_uri: edit/main/docs
+edit_uri: edit/main/docs
 
 # Source Docs & Site Docs
 docs_dir: "docs"
