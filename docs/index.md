@@ -6,6 +6,7 @@ logo: images/ibm-blue-background.png
 
 ## Introduction
 
+
 Welcome to our workshop! In this workshop we'll be using the open-sourced [IBM Granite
 AI foundation models](https://www.ibm.com/granite) for a number of use cases that
 demonstrates the value of [generative AI](https://developer.ibm.com/generative-ai-for-developers).
@@ -19,13 +20,16 @@ By the end of this workshop, you will be able to:
 
 ## About this workshop
 
+
 The introductory page of the workshop is broken down into the following sections:  
+
 - [Introduction](#introduction)
 - [About this workshop](#about-this-workshop)
   - [Agenda](#agenda)
   - [Technology Used](#technology-used)
   - [Credits](#credits)
-
+ 
+  
 ### Agenda
 
 | Link to Content                                              | Description                                                  |
