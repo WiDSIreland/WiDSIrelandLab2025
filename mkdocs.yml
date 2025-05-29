@@ -1,0 +1,104 @@
+# Project information
+site_name: WiDS Ireland Lab 2025
+site_url: https://widsireland.github.io/WiDSIrelandLab2025/
+use_directory_urls: true
+site_author: IBM Research
+site_description: Women in Data Science Page
+
+# Repository
+repo_name: WiDSIrelandLab2025
+repo_url: https://github.com/WiDSIreland/WiDSIrelandLab2025
+edit_uri: edit/main/docs
+
+# Source Docs & Site Docs
+docs_dir: "docs"
+site_dir: "site"
+
+# navigation
+nav:
+  - Welcome:
+      - About the workshop: index.md
+  - Workshop:
+      - Lab 0. Pre-work: pre-work/readme.md
+      - Lab 1. Summarize a text document with Granite: lab-1/readme.md
+      - Lab 2. Retrieval Augmented Generation (RAG) with Langchain: lab-2/readme.md
+      - Lab 3. Energy Demand Forecasting with Granite Timeseries (TTM): lab-3/readme.md
+  - References:
+      - IBM Granite Community: https://github.com/ibm-granite-community
+
+# Copyright
+copyright: Copyright &copy; 2024- IBM Research
+
+# Theme
+theme:
+  name: material
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  icon:
+    logo: material/library
+  logo: images/ibm-blue-background.png
+  favicon: images/favicon.ico
+  features:
+    - navigation.tabs
+    - navigation.footer
+    - content.code.copy
+  palette:
+    scheme: default
+    primary: blue
+    accent: blue
+
+
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ibm
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ibmdeveloper
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/ibm/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/user/developerworks
+    - icon: fontawesome/brands/dev
+      link: https://dev.to/ibmdeveloper
+  colab_url: https://colab.research.google.com/github/WiDSIreland/WiDSIrelandLab2025
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
