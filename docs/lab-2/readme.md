@@ -32,7 +32,8 @@ This lab is a [Jupyter notebook](https://jupyter.org/). Please follow the instru
 
 
 [![Retrieval Augmented Generation (RAG) with Langchain notebook](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")](https://github.com/WiDSIreland/WiDSIrelandLab2025/blob/main/notebooks/RAG_with_Langchain.ipynb)
-[![Retrieval Augmented Generation (RAG) with Langchain notebook](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")](https://github.com/WiDSIreland/WiDSIrelandLab2025/blob/main/notebooks/RAG_with_Langchain.ipynb)
+[![Document Summarization with Granite notebook](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")](https://colab.research.google.com/github/WiDSIreland/WiDSIrelandLab2025/blob/main/notebooks/RAG_with_Langchain.ipynb)
+
 
 To run the notebook from your command line in Jupyter using the active virtual environment from the [pre-work](../pre-work/readme.md), run:
 
