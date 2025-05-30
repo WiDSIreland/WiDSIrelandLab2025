@@ -921,14 +921,14 @@
     <span class="p">)</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
 </code></pre></div>
-1. <code>model_path = "ibm-granite/granite-3.2-8b-instruct"</code>: This line assigns the string <code>"ibm-granite/granite-3.2-8b-instruct"</code> to the <code>model_path</code> variable. This is the name of the pre-trained model on the Hugging Face Model Hub that will be used for the language model.
-2. <code>try:</code>: This line starts a try block, which is used to handle exceptions that may occur during the execution of the code within the block.
-3. <code>response = requests.get(os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434"))</code>: This line sends a GET request to the Ollama server using the <code>requests.get()</code> function. The server address is obtained from the <code>OLLAMA_HOST</code> environment variable. If the environment variable is not set, the default address <code>http://127.0.0.1:11434</code> is used.
-4. <code>model = OllamaLLM(model="granite3.2:2b")</code>: This line creates an instance of the <code>OllamaLLM</code> class from the <code>ollama</code> library, specifying the model name as <code>"granite3.2:2b"</code>.
-5. <code>model = model.bind(raw=True)</code>: This line binds the <code>OllamaLLM</code> instance to the client-side, allowing client-side controls over the prompt.
-6. <code>except:</code>: This line starts an except block, which is used to handle exceptions that occur within the try block.
-7. <code>model = Replicate(model=model_path, replicate_api_token=get_env_var("REPLICATE_API_TOKEN"))</code>: This line creates an instance of the <code>Replicate</code> class from the <code>replicate</code> library, specifying the model path and the Replicate API token obtained from the <code>REPLICATE_API_TOKEN</code> environment variable.
-8. <code>tokenizer = AutoTokenizer.from_pretrained(model_path)</code>: This line loads a pre-trained tokenizer for the specified model using the <code>AutoTokenizer.from_pretrained()</code> method from the <code>transformers</code> library.</p>
+1. <code>model_path = "ibm-granite/granite-3.2-8b-instruct"</code>: This line assigns the string <code>"ibm-granite/granite-3.2-8b-instruct"</code> to the <code>model_path</code> variable. This is the name of the pre-trained model on the Hugging Face Model Hub that will be used for the language model.<br />
+2. <code>try:</code>: This line starts a try block, which is used to handle exceptions that may occur during the execution of the code within the block.<br />
+3. <code>response = requests.get(os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434"))</code>: This line sends a GET request to the Ollama server using the <code>requests.get()</code> function. The server address is obtained from the <code>OLLAMA_HOST</code> environment variable. If the environment variable is not set, the default address <code>http://127.0.0.1:11434</code> is used.<br />
+4. <code>model = OllamaLLM(model="granite3.2:2b")</code>: This line creates an instance of the <code>OllamaLLM</code> class from the <code>ollama</code> library, specifying the model name as <code>"granite3.2:2b"</code>.<br />
+5. <code>model = model.bind(raw=True)</code>: This line binds the <code>OllamaLLM</code> instance to the client-side, allowing client-side controls over the prompt.<br />
+6. <code>except:</code>: This line starts an except block, which is used to handle exceptions that occur within the try block.<br />
+7. <code>model = Replicate(model=model_path, replicate_api_token=get_env_var("REPLICATE_API_TOKEN"))</code>: This line creates an instance of the <code>Replicate</code> class from the <code>replicate</code> library, specifying the model path and the Replicate API token obtained from the <code>REPLICATE_API_TOKEN</code> environment variable.<br />
+8. <code>tokenizer = AutoTokenizer.from_pretrained(model_path)</code>: This line loads a pre-trained tokenizer for the specified model using the <code>AutoTokenizer.from_pretrained()</code> method from the <code>transformers</code> library.  </p>
 <p>In summary, the code snippet attempts to connect to a locally accessible Ollama server for the specified model. If the connection is successful, it creates an <code>OllamaLLM</code> instance and binds it to the client-side. If the connection fails, it uses the Replicate service to load the model. In both cases, a tokenizer is loaded for the specified model using the <code>AutoTokenizer.from_pretrained()</code> method.</p>
 <h2 id="building-the-vector-database">Building the Vector Database<a class="headerlink" href="#building-the-vector-database" title="Permanent link">&para;</a></h2>
 <p>In this example, we take the State of the Union speech text, split it into chunks, derive embedding vectors using the embedding model, and load it into the vector database for querying.</p>
@@ -944,10 +944,10 @@
     <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">filename</span><span class="p">)</span>
 </code></pre></div>
 <ol>
-<li><code>filename = "state_of_the_union.txt"</code>: This line assigns the string <code>"state_of_the_union.txt"</code> to the <code>filename</code> variable. This is the name of the file that will be downloaded and saved locally.</li>
-<li><code>url = "https://raw.githubusercontent.com/IBM/watson-machine-learning-samples/master/cloud/data/foundation_models/state_of_the_union.txt"</code>: This line assigns the URL of the file to be downloaded to the <code>url</code> variable.</li>
-<li><code>if not os.path.isfile(filename)</code>: This line checks if the file specified by <code>filename</code> does not already exist in the current working directory. The <code>os.path.isfile()</code> function returns <code>True</code> if the file exists and <code>False</code> otherwise.</li>
-<li><code>wget.download(url, out=filename)</code>: If the file does not exist, this line uses the <code>wget.download()</code> function to download the file from the specified URL and save it with the name <code>filename</code>. The <code>out</code> parameter is used to specify the output file name.</li>
+<li><code>filename = "state_of_the_union.txt"</code>: This line assigns the string <code>"state_of_the_union.txt"</code> to the <code>filename</code> variable. This is the name of the file that will be downloaded and saved locally.  </li>
+<li><code>url = "https://raw.githubusercontent.com/IBM/watson-machine-learning-samples/master/cloud/data/foundation_models/state_of_the_union.txt"</code>: This line assigns the URL of the file to be downloaded to the <code>url</code> variable.  </li>
+<li><code>if not os.path.isfile(filename)</code>: This line checks if the file specified by <code>filename</code> does not already exist in the current working directory. The <code>os.path.isfile()</code> function returns <code>True</code> if the file exists and <code>False</code> otherwise.  </li>
+<li><code>wget.download(url, out=filename)</code>: If the file does not exist, this line uses the <code>wget.download()</code> function to download the file from the specified URL and save it with the name <code>filename</code>. The <code>out</code> parameter is used to specify the output file name.  </li>
 </ol>
 <p>In summary, the code snippet checks if a file with the specified name already exists in the current working directory. If the file does not exist, it downloads the file from the provided URL using the <code>wget</code> library and saves it with the specified filename.</p>
 <h1 id="split-the-document-into-chunks">Split the document into chunks<a class="headerlink" href="#split-the-document-into-chunks" title="Permanent link">&para;</a></h1>
@@ -968,10 +968,10 @@
 </code></pre></div>
 <p>This Python script is using the Langchain library to load a text file and split it into smaller chunks. Here's a breakdown of what each part does:</p>
 <ol>
-<li><code>from langchain.document_loaders import TextLoader</code>: This line imports the TextLoader class from the langchain.document_loaders module. TextLoader is used to load documents from a file.</li>
-<li><code>from langchain.text_splitter import CharacterTextSplitter</code> : This line imports the CharacterTextSplitter class from the <code>langchain.text_splitter</code> module. <code>CharacterTextSplitter</code> is used to split text into smaller chunks.</li>
-<li><code>loader = TextLoader(filename)</code> : This line creates an instance of <code>TextLoader</code>, which is used to load the text from the specified file <code>(filename)</code>.  </li>
-<li><code>documents = loader.load()</code> : This line loads the text from the file and stores it in the <code>documents</code> variable as a list of strings.  </li>
+<li><code>from langchain.document_loaders import TextLoader</code>: This line imports the TextLoader class from the langchain.document_loaders module. TextLoader is used to load documents from a file.  </li>
+<li><code>from langchain.text_splitter import CharacterTextSplitter</code> : This line imports the CharacterTextSplitter class from the <code>langchain.text_splitter</code> module. <code>CharacterTextSplitter</code> is used to split text into smaller chunks.  </li>
+<li><code>loader = TextLoader(filename)</code> : This line creates an instance of <code>TextLoader</code>, which is used to load the text from the specified file <code>(filename)</code>.    </li>
+<li><code>documents = loader.load()</code> : This line loads the text from the file and stores it in the <code>documents</code> variable as a list of strings.    </li>
 <li><code>text_splitter = CharacterTextSplitter.from_huggingface_tokenizer(...)</code> : This line creates an instance of <code>CharacterTextSplitter</code>. It takes a Hugging Face tokenizer <code>(embeddings_tokenizer)</code>, sets the chunk size to the maximum length of a single sentence that the tokenizer can handle, and sets the chunk overlap to 0 (meaning no overlap between chunks).  </li>
 <li><code>texts = text_splitter.split_documents(documents)</code>: This line splits the documents into smaller chunks using the <code>CharacterTextSplitter</code> instance. The result is stored in the texts variable as a list of lists, where each inner list contains the chunks of a single document.  </li>
 <li><code>for doc_id, text in enumerate(texts): text.metadata["doc_id"] = doc_id</code>: This loop assigns a unique identifier (doc_id) to each chunk of text. The doc_id is the index of the chunk in the texts list.  </li>
@@ -983,10 +983,10 @@
 <div class="highlight"><pre><span></span><code><span class="n">ids</span> <span class="o">=</span> <span class="n">vector_db</span><span class="o">.</span><span class="n">add_documents</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span><span class="si">}</span><span class="s2"> documents added to the vector database&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Next we load the <code>texts</code> object created earlier, split it into sentence-sized chunks, and adds these chunks to our vector database, associating each chunk with a unique ID.</p>
+<p>Next we load the <code>texts</code> object created earlier, split it into sentence-sized chunks, and adds these chunks to our vector database, associating each chunk with a unique ID.  </p>
 <ol>
-<li><code>ids = vector_db.add_documents(texts)</code>: This line adds the text chunks to a vector database (<code>vector_db</code>). The <code>add_documents</code> method returns a list of IDs for the added documents.</li>
-<li><code>print(f"{len(ids)} documents added to the vector database")</code>: This line prints the number of documents added to the vector database.</li>
+<li><code>ids = vector_db.add_documents(texts)</code>: This line adds the text chunks to a vector database (<code>vector_db</code>). The <code>add_documents</code> method returns a list of IDs for the added documents.  </li>
+<li><code>print(f"{len(ids)} documents added to the vector database")</code>: This line prints the number of documents added to the vector database.  </li>
 </ol>
 <h2 id="querying-the-vector-database">Querying the Vector Database<a class="headerlink" href="#querying-the-vector-database" title="Permanent link">&para;</a></h2>
 <h3 id="conduct-a-similarity-search">Conduct a similarity search<a class="headerlink" href="#conduct-a-similarity-search" title="Permanent link">&para;</a></h3>
