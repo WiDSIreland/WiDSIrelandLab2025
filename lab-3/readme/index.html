@@ -535,11 +535,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#loading-the-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading the Lab
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading the Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#install-the-tsfm-library" class="md-nav__link">
     <span class="md-ellipsis">
       Install the TSFM Library
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -657,11 +672,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#loading-the-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading the Lab
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading the Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#install-the-tsfm-library" class="md-nav__link">
     <span class="md-ellipsis">
       Install the TSFM Library
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -686,6 +716,13 @@
 
 <h1 id="energy-demand-forecasting-with-granite-timeseries-ttm">Energy Demand Forecasting with Granite Timeseries (TTM)<a class="headerlink" href="#energy-demand-forecasting-with-granite-timeseries-ttm" title="Permanent link">&para;</a></h1>
 <p>TinyTimeMixers (TTMs) are compact pre-trained models for Multivariate Time-Series Forecasting, open-sourced by IBM Research. With less than 1 Million parameters, TTM introduces the notion of the first-ever "tiny" pre-trained models for Time-Series Forecasting. TTM outperforms several popular benchmarks demanding billions of parameters in zero-shot and few-shot forecasting and can easily be fine-tuned for multi-variate forecasts.</p>
+<h2 id="loading-the-lab">Loading the Lab<a class="headerlink" href="#loading-the-lab" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/WiDSIreland/WiDSIrelandLab2025/blob/main/notebooks/Time_Series_Getting_Started.ipynb"><img alt="Energy Demand Forecasting with Granite Timeseries notebook" src="https://badgen.net/badge/icon/github?icon=github&amp;label=View%20on" title="View on GitHub" /></a>
+<a href="https://colab.research.google.com/github/WiDSIreland/WiDSIrelandLab2025/blob/main/notebooks/Time_Series_Getting_Started.ipynb"><img alt="Document Summarization with Granite notebook" src="https://colab.research.google.com/assets/colab-badge.svg" title="Open In Colab" /></a></p>
+<p>To run the notebook from your command line in Jupyter using the active virtual environment from the <a href="../../pre-work/readme/">pre-work</a>, run:</p>
+<div class="highlight"><pre><span></span><code>jupyter-lab
+</code></pre></div>
+<p>When Jupyter Lab opens the path to the <code>notebooks/RAG_with_Langchain.ipynb</code> notebook file is relative to the <code>sample-wids</code> folder from the git clone in the <a href="../../pre-work/readme/">pre-work</a>. The folder navigation pane on the left-hand side can be used to navigate to the file. Once the notebook has been found it can be double clicked and it will open to the pane on the right. </p>
 <h3 id="install-the-tsfm-library">Install the TSFM Library<a class="headerlink" href="#install-the-tsfm-library" title="Permanent link">&para;</a></h3>
 <p>The <a href="https://github.com/ibm-granite/granite-tsfm">granite-tsfm library</a> provides utilities for working with Time Series Foundation Models (TSFM). Here the pinned version is retrieved and installed.</p>
 <h1 id="install-the-tsfm-library_1">Install the tsfm library<a class="headerlink" href="#install-the-tsfm-library_1" title="Permanent link">&para;</a></h1>
@@ -781,10 +818,10 @@ points to a specific CSV file containing energy consumption data for Spain, with
     <span class="n">num_input_channels</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">target_columns</span><span class="p">),</span>  <span class="c1"># tsp.num_input_channels</span>
 <span class="p">)</span>
 </code></pre></div>
-1. <code>TinyTimeMixerForPrediction.from_pretrained()</code>: This method is used to instantiate a pre-trained TinyTimeMixer model from the Hugging Face Model Hub. The method takes the following arguments:
-    * <code>"ibm-granite/granite-timeseries-ttm-r2"</code>: The name of the pre-trained model on the Hugging Face Model Hub. In this case, it is the TinyTimeMixer model pre-trained on time series data by IBM Granite.
-    * <code>num_input_channels</code>: The number of input channels in the time series data. This value is set to the length of the <code>target_columns</code> list, indicating that the model will process multiple target columns as separate input channels.
-2. <code>zeroshot_model = TinyTimeMixerForPrediction.from_pretrained(...)</code>: This line instantiates the pre-trained TinyTimeMixer model and assigns it to the <code>zeroshot_model</code> variable. The model is now ready to be used for forecasting tasks.</p>
+1. <code>TinyTimeMixerForPrediction.from_pretrained()</code>: This method is used to instantiate a pre-trained TinyTimeMixer model from the Hugging Face Model Hub. The method takes the following arguments:<br />
+    * <code>"ibm-granite/granite-timeseries-ttm-r2"</code>: The name of the pre-trained model on the Hugging Face Model Hub. In this case, it is the TinyTimeMixer model pre-trained on time series data by IBM Granite.<br />
+    * <code>num_input_channels</code>: The number of input channels in the time series data. This value is set to the length of the <code>target_columns</code> list, indicating that the model will process multiple target columns as separate input channels.<br />
+2. <code>zeroshot_model = TinyTimeMixerForPrediction.from_pretrained(...)</code>: This line instantiates the pre-trained TinyTimeMixer model and assigns it to the <code>zeroshot_model</code> variable. The model is now ready to be used for forecasting tasks.  </p>
 <p>In summary, the code snippet instantiates a pre-trained TinyTimeMixer model from the Hugging Face Model Hub, specifying the number of input channels based on the number of target columns in the dataset. The instantiated model is stored in the <code>zeroshot_model</code> variable and can be used for generating forecasts.</p>
 <h3 id="create-a-forecasting-pipeline">Create a forecasting pipeline<a class="headerlink" href="#create-a-forecasting-pipeline" title="Permanent link">&para;</a></h3>
 <p>Set up the forecasting pipeline with the model, setting <code>frequency</code> given our knowledge of the sample frequency. In this example we set <code>explode_forecasts</code> to <code>False</code>, which keeps each sequence of predictions in a list within the dataframe cells. We then make a forecast on the dataset.</p>
@@ -806,20 +843,20 @@ points to a specific CSV file containing energy consumption data for Spain, with
 <span class="n">zeroshot_forecast</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </code></pre></div>
 <ol>
-<li><code>device = "cuda" if torch.cuda.is_available() else "cpu"</code>: This line checks if a GPU is available for use and sets the <code>device</code> variable accordingly. If a GPU is available, the <code>device</code> variable is set to <code>"cuda"</code>; otherwise, it is set to <code>"cpu"</code>. This ensures that the forecasting pipeline uses the available hardware for faster computation.</li>
-<li><code>TimeSeriesForecastingPipeline</code>: This is a class from the <code>tsfm_public</code> library that represents a high-level interface for building and executing time series forecasting pipelines. The pipeline consists of several components, such as data preprocessing, feature engineering, model training, and forecast generation.</li>
-<li><code>pipeline = TimeSeriesForecastingPipeline(...)</code>: This line creates an instance of the <code>TimeSeriesForecastingPipeline</code> class, passing the required arguments to configure the pipeline. The arguments include:<ul>
-<li><code>zeroshot_model</code>: The TinyTimeMixer model used for forecasting.</li>
-<li><code>timestamp_column</code>: The name of the column containing the timestamp information.</li>
-<li><code>id_columns</code>: A list of columns that do not contain time series data and should not be used for forecasting. In this case, it is an empty list.</li>
-<li><code>target_columns</code>: A list of columns containing the target time series data for forecasting.</li>
-<li><code>explode_forecasts</code>: A boolean flag indicating whether to generate separate forecasts for each unique identifier in the <code>id_columns</code>. In this case, it is set to <code>False</code>.</li>
-<li><code>freq</code>: The frequency of the time series data, specified as a string (e.g., <code>"h"</code> for hourly data).</li>
-<li><code>device</code>: The device to use for computation, either <code>"cuda"</code> for a GPU or <code>"cpu"</code> for the CPU.</li>
+<li><code>device = "cuda" if torch.cuda.is_available() else "cpu"</code>: This line checks if a GPU is available for use and sets the <code>device</code> variable accordingly. If a GPU is available, the <code>device</code> variable is set to <code>"cuda"</code>; otherwise, it is set to <code>"cpu"</code>. This ensures that the forecasting pipeline uses the available hardware for faster computation.  </li>
+<li><code>TimeSeriesForecastingPipeline</code>: This is a class from the <code>tsfm_public</code> library that represents a high-level interface for building and executing time series forecasting pipelines. The pipeline consists of several components, such as data preprocessing, feature engineering, model training, and forecast generation.  </li>
+<li><code>pipeline = TimeSeriesForecastingPipeline(...)</code>: This line creates an instance of the <code>TimeSeriesForecastingPipeline</code> class, passing the required arguments to configure the pipeline. The arguments include:  <ul>
+<li><code>zeroshot_model</code>: The TinyTimeMixer model used for forecasting.  </li>
+<li><code>timestamp_column</code>: The name of the column containing the timestamp information.  </li>
+<li><code>id_columns</code>: A list of columns that do not contain time series data and should not be used for forecasting. In this case, it is an empty list.  </li>
+<li><code>target_columns</code>: A list of columns containing the target time series data for forecasting.  </li>
+<li><code>explode_forecasts</code>: A boolean flag indicating whether to generate separate forecasts for each unique identifier in the <code>id_columns</code>. In this case, it is set to <code>False</code>.  </li>
+<li><code>freq</code>: The frequency of the time series data, specified as a string (e.g., <code>"h"</code> for hourly data).  </li>
+<li><code>device</code>: The device to use for computation, either <code>"cuda"</code> for a GPU or <code>"cpu"</code> for the CPU.  </li>
 </ul>
 </li>
-<li><code>zeroshot_forecast = pipeline(input_df)</code>: This line uses the configured pipeline to generate forecasts for the target columns in the <code>input_df</code> DataFrame. The resulting forecasts are stored in the <code>zeroshot_forecast</code> variable.</li>
-<li><code>zeroshot_forecast.tail()</code>: This method is called on the <code>zeroshot_forecast</code> object to display the last few rows of the forecasted data. This can be useful for quickly verifying that the forecasts have been generated correctly.</li>
+<li><code>zeroshot_forecast = pipeline(input_df)</code>: This line uses the configured pipeline to generate forecasts for the target columns in the <code>input_df</code> DataFrame. The resulting forecasts are stored in the <code>zeroshot_forecast</code> variable.  </li>
+<li><code>zeroshot_forecast.tail()</code>: This method is called on the <code>zeroshot_forecast</code> object to display the last few rows of the forecasted data. This can be useful for quickly verifying that the forecasts have been generated correctly.  </li>
 </ol>
 <p>In summary, the code snippet creates a time series forecasting pipeline using the TinyTimeMixer model, configures the pipeline with the required parameters, generates forecasts for the target columns in the input data, and displays the last few rows of the forecasted data.</p>
 <h3 id="plot-predictions-along-with-the-historical-data">Plot predictions along with the historical data.<a class="headerlink" href="#plot-predictions-along-with-the-historical-data" title="Permanent link">&para;</a></h3>
@@ -836,17 +873,17 @@ points to a specific CSV file containing energy consumption data for Spain, with
 <span class="p">)</span>
 </code></pre></div>
 <ol>
-<li><code>plot_predictions()</code>: This function from the <code>tsfm_public.toolkit.visualization</code> module is used to visualize the historical data and predicted series. It takes several arguments to customize the plot:<ul>
-<li><code>input_df</code>: The input DataFrame containing the historical time series data.</li>
-<li><code>predictions_df</code>: The DataFrame containing the forecasted series.</li>
-<li><code>freq</code>: The frequency of the time series data, specified as a string (e.g., <code>"h"</code> for hourly data).</li>
-<li><code>timestamp_column</code>: The name of the column containing the timestamp information.</li>
-<li><code>channel</code>: The name of the target column for which the forecasts were generated.</li>
-<li><code>indices</code>: A list of indices specifying which forecasts to plot. In this case, it is set to <code>[-1]</code>, which means that only the most recent forecast is plotted.</li>
-<li><code>num_plots</code>: The number of subplots to create. In this case, it is set to <code>1</code>, indicating that a single plot is generated.</li>
+<li><code>plot_predictions()</code>: This function from the <code>tsfm_public.toolkit.visualization</code> module is used to visualize the historical data and predicted series. It takes several arguments to customize the plot:  <ul>
+<li><code>input_df</code>: The input DataFrame containing the historical time series data.  </li>
+<li><code>predictions_df</code>: The DataFrame containing the forecasted series.  </li>
+<li><code>freq</code>: The frequency of the time series data, specified as a string (e.g., <code>"h"</code> for hourly data).  </li>
+<li><code>timestamp_column</code>: The name of the column containing the timestamp information.  </li>
+<li><code>channel</code>: The name of the target column for which the forecasts were generated.  </li>
+<li><code>indices</code>: A list of indices specifying which forecasts to plot. In this case, it is set to <code>[-1]</code>, which means that only the most recent forecast is plotted.  </li>
+<li><code>num_plots</code>: The number of subplots to create. In this case, it is set to <code>1</code>, indicating that a single plot is generated.  </li>
 </ul>
 </li>
-<li><code>plot_predictions(...)</code>: This line calls the <code>plot_predictions()</code> function, passing the required arguments to customize the plot. The function generates a plot that displays the historical data and the most recent forecast for the specified target column.</li>
+<li><code>plot_predictions(...)</code>: This line calls the <code>plot_predictions()</code> function, passing the required arguments to customize the plot. The function generates a plot that displays the historical data and the most recent forecast for the specified target column.  </li>
 </ol>
 <p>In summary, the code snippet uses the <code>plot_predictions()</code> function to visualize the historical data and the most recent forecast for the target column in a single plot. This visualization helps to compare the actual data with the predicted series and assess the model's performance.</p>
 
