@@ -1,7 +1,7 @@
 # Project information
 site_name: WiDS Ireland Lab 2025
 site_url: https://widsireland.github.io/WiDSIrelandLab2025/
-use_directory_urls: true
+#use_directory_urls: true
 site_author: IBM Research
 site_description: Women in Data Science Page
 

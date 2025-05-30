@@ -132,14 +132,14 @@ except Exception:  # Use Replicate for the model
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 
 ```
-1. `model_path = "ibm-granite/granite-3.2-8b-instruct"`: This line assigns the string `"ibm-granite/granite-3.2-8b-instruct"` to the `model_path` variable. This is the name of the pre-trained model on the Hugging Face Model Hub that will be used for the language model.
-2. `try:`: This line starts a try block, which is used to handle exceptions that may occur during the execution of the code within the block.
-3. `response = requests.get(os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434"))`: This line sends a GET request to the Ollama server using the `requests.get()` function. The server address is obtained from the `OLLAMA_HOST` environment variable. If the environment variable is not set, the default address `http://127.0.0.1:11434` is used.
-4. `model = OllamaLLM(model="granite3.2:2b")`: This line creates an instance of the `OllamaLLM` class from the `ollama` library, specifying the model name as `"granite3.2:2b"`.
-5. `model = model.bind(raw=True)`: This line binds the `OllamaLLM` instance to the client-side, allowing client-side controls over the prompt.
-6. `except:`: This line starts an except block, which is used to handle exceptions that occur within the try block.
-7. `model = Replicate(model=model_path, replicate_api_token=get_env_var("REPLICATE_API_TOKEN"))`: This line creates an instance of the `Replicate` class from the `replicate` library, specifying the model path and the Replicate API token obtained from the `REPLICATE_API_TOKEN` environment variable.
-8. `tokenizer = AutoTokenizer.from_pretrained(model_path)`: This line loads a pre-trained tokenizer for the specified model using the `AutoTokenizer.from_pretrained()` method from the `transformers` library.
+1. `model_path = "ibm-granite/granite-3.2-8b-instruct"`: This line assigns the string `"ibm-granite/granite-3.2-8b-instruct"` to the `model_path` variable. This is the name of the pre-trained model on the Hugging Face Model Hub that will be used for the language model.  
+2. `try:`: This line starts a try block, which is used to handle exceptions that may occur during the execution of the code within the block.  
+3. `response = requests.get(os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434"))`: This line sends a GET request to the Ollama server using the `requests.get()` function. The server address is obtained from the `OLLAMA_HOST` environment variable. If the environment variable is not set, the default address `http://127.0.0.1:11434` is used.  
+4. `model = OllamaLLM(model="granite3.2:2b")`: This line creates an instance of the `OllamaLLM` class from the `ollama` library, specifying the model name as `"granite3.2:2b"`.  
+5. `model = model.bind(raw=True)`: This line binds the `OllamaLLM` instance to the client-side, allowing client-side controls over the prompt.  
+6. `except:`: This line starts an except block, which is used to handle exceptions that occur within the try block.  
+7. `model = Replicate(model=model_path, replicate_api_token=get_env_var("REPLICATE_API_TOKEN"))`: This line creates an instance of the `Replicate` class from the `replicate` library, specifying the model path and the Replicate API token obtained from the `REPLICATE_API_TOKEN` environment variable.  
+8. `tokenizer = AutoTokenizer.from_pretrained(model_path)`: This line loads a pre-trained tokenizer for the specified model using the `AutoTokenizer.from_pretrained()` method from the `transformers` library.  
 
 In summary, the code snippet attempts to connect to a locally accessible Ollama server for the specified model. If the connection is successful, it creates an `OllamaLLM` instance and binds it to the client-side. If the connection fails, it uses the Replicate service to load the model. In both cases, a tokenizer is loaded for the specified model using the `AutoTokenizer.from_pretrained()` method.
 
@@ -162,10 +162,10 @@ if not os.path.isfile(filename):
     wget.download(url, out=filename)
 ```
 
-1. `filename = "state_of_the_union.txt"`: This line assigns the string `"state_of_the_union.txt"` to the `filename` variable. This is the name of the file that will be downloaded and saved locally.
-2. `url = "https://raw.githubusercontent.com/IBM/watson-machine-learning-samples/master/cloud/data/foundation_models/state_of_the_union.txt"`: This line assigns the URL of the file to be downloaded to the `url` variable.
-3. `if not os.path.isfile(filename)`: This line checks if the file specified by `filename` does not already exist in the current working directory. The `os.path.isfile()` function returns `True` if the file exists and `False` otherwise.
-4. `wget.download(url, out=filename)`: If the file does not exist, this line uses the `wget.download()` function to download the file from the specified URL and save it with the name `filename`. The `out` parameter is used to specify the output file name.
+1. `filename = "state_of_the_union.txt"`: This line assigns the string `"state_of_the_union.txt"` to the `filename` variable. This is the name of the file that will be downloaded and saved locally.  
+2. `url = "https://raw.githubusercontent.com/IBM/watson-machine-learning-samples/master/cloud/data/foundation_models/state_of_the_union.txt"`: This line assigns the URL of the file to be downloaded to the `url` variable.  
+3. `if not os.path.isfile(filename)`: This line checks if the file specified by `filename` does not already exist in the current working directory. The `os.path.isfile()` function returns `True` if the file exists and `False` otherwise.  
+4. `wget.download(url, out=filename)`: If the file does not exist, this line uses the `wget.download()` function to download the file from the specified URL and save it with the name `filename`. The `out` parameter is used to specify the output file name.  
 
 In summary, the code snippet checks if a file with the specified name already exists in the current working directory. If the file does not exist, it downloads the file from the provided URL using the `wget` library and saves it with the specified filename.
 
@@ -191,10 +191,10 @@ print(f"{len(texts)} text document chunks created")
 
 This Python script is using the Langchain library to load a text file and split it into smaller chunks. Here's a breakdown of what each part does:
 
-1. `from langchain.document_loaders import TextLoader`: This line imports the TextLoader class from the langchain.document_loaders module. TextLoader is used to load documents from a file.
-2. `from langchain.text_splitter import CharacterTextSplitter` : This line imports the CharacterTextSplitter class from the `langchain.text_splitter` module. `CharacterTextSplitter` is used to split text into smaller chunks.
-3. `loader = TextLoader(filename)` : This line creates an instance of `TextLoader`, which is used to load the text from the specified file `(filename)`.  
-4. `documents = loader.load()` : This line loads the text from the file and stores it in the `documents` variable as a list of strings.  
+1. `from langchain.document_loaders import TextLoader`: This line imports the TextLoader class from the langchain.document_loaders module. TextLoader is used to load documents from a file.  
+2. `from langchain.text_splitter import CharacterTextSplitter` : This line imports the CharacterTextSplitter class from the `langchain.text_splitter` module. `CharacterTextSplitter` is used to split text into smaller chunks.  
+3. `loader = TextLoader(filename)` : This line creates an instance of `TextLoader`, which is used to load the text from the specified file `(filename)`.    
+4. `documents = loader.load()` : This line loads the text from the file and stores it in the `documents` variable as a list of strings.    
 5. `text_splitter = CharacterTextSplitter.from_huggingface_tokenizer(...)` : This line creates an instance of `CharacterTextSplitter`. It takes a Hugging Face tokenizer `(embeddings_tokenizer)`, sets the chunk size to the maximum length of a single sentence that the tokenizer can handle, and sets the chunk overlap to 0 (meaning no overlap between chunks).  
 6. `texts = text_splitter.split_documents(documents)`: This line splits the documents into smaller chunks using the `CharacterTextSplitter` instance. The result is stored in the texts variable as a list of lists, where each inner list contains the chunks of a single document.  
 7. `for doc_id, text in enumerate(texts): text.metadata["doc_id"] = doc_id`: This loop assigns a unique identifier (doc_id) to each chunk of text. The doc_id is the index of the chunk in the texts list.  
@@ -212,10 +212,10 @@ ids = vector_db.add_documents(texts)
 print(f"{len(ids)} documents added to the vector database")
 ```
 
-Next we load the `texts` object created earlier, split it into sentence-sized chunks, and adds these chunks to our vector database, associating each chunk with a unique ID.
+Next we load the `texts` object created earlier, split it into sentence-sized chunks, and adds these chunks to our vector database, associating each chunk with a unique ID.  
 
-1. `ids = vector_db.add_documents(texts)`: This line adds the text chunks to a vector database (`vector_db`). The `add_documents` method returns a list of IDs for the added documents.
-2. `print(f"{len(ids)} documents added to the vector database")`: This line prints the number of documents added to the vector database.
+1. `ids = vector_db.add_documents(texts)`: This line adds the text chunks to a vector database (`vector_db`). The `add_documents` method returns a list of IDs for the added documents.  
+2. `print(f"{len(ids)} documents added to the vector database")`: This line prints the number of documents added to the vector database.  
 
 ## Querying the Vector Database
 ### Conduct a similarity search

@@ -20,7 +20,10 @@ This lab is a [Jupyter notebook](https://jupyter.org/). Please follow the instru
 
 Using colab to run the remotely 
 [![Document Summarization with Granite notebook](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")](https://github.com/WiDSIreland/WiDSIrelandLab2025/blob/main/notebooks/Summarize.ipynb)
-[![Document Summarization with Granite notebook](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")]((https://github.com/WiDSIreland/WiDSIrelandLab2025/blob/main/notebooks/Summarize.ipynb)
+[![Document Summarization with Granite notebook](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")](https://github.com/WiDSIreland/WiDSIrelandLab2025/blob/main/notebooks/Summarize.ipynb)
+
+[![Document Summarization with Granite notebook](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/notebooks/Summarize.ipynb){:target="_blank"}
+[![Document Summarization with Granite notebook](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")]({{ extra.colab_url }}/blob/{{ git.commit }}/notebooks/Summarize.ipynb){:target="_blank"}
 
 To run the notebook from command line in Jupyter using the active virtual environment from the [pre-work](../pre-work/readme.md), run:
 
