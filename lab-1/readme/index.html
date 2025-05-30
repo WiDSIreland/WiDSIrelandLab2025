@@ -972,11 +972,11 @@
 <p><strong>Function Signature</strong>: The function takes one required argument and two optional arguments. The required arguments are:</p>
 </li>
 <li>
-<p><code>source</code>: A string representing the text document to be chunked.</p>
+<p><code>source</code>: A string representing the text document to be chunked.  </p>
 </li>
-<li><code>*</code>: Is a marker that all later arguments must be passed by keyword.</li>
+<li><code>*</code>: Is a marker that all later arguments must be passed by keyword.  </li>
 <li>
-<p>The optional arguments are:</p>
+<p>The optional arguments are:  </p>
 <ul>
 <li><code>dropwhile</code> : A callable (function) that takes a <code>BaseChunk</code> object and returns a boolean. This function is used to determine when to stop dropping elements from the beginning of the chunks. The default is a lambda function that always returns <code>False</code>, meaning it will never drop any elements.</li>
 <li><code>takewhile</code>: A callable (function) that takes a <code>BaseChunk</code> object and returns a boolean. This function is used to determine when to stop taking elements from the beginning of the chunks. The default is a lambda function that always returns <code>True</code>, meaning it will take all elements.</li>
