@@ -89,9 +89,9 @@ This Python function, `chunk_document`, is designed to perform hierarchical chun
 
 1. **Function Signature**: The function takes one required argument and two optional arguments. The required arguments are:
 
-   - `source`: A string representing the text document to be chunked.
-   - `*`: Is a marker that all later arguments must be passed by keyword.
-   - The optional arguments are:
+   - `source`: A string representing the text document to be chunked.  
+   - `*`: Is a marker that all later arguments must be passed by keyword.  
+   - The optional arguments are:  
      - `dropwhile` : A callable (function) that takes a `BaseChunk` object and returns a boolean. This function is used to determine when to stop dropping elements from the beginning of the chunks. The default is a lambda function that always returns `False`, meaning it will never drop any elements.
      - `takewhile`: A callable (function) that takes a `BaseChunk` object and returns a boolean. This function is used to determine when to stop taking elements from the beginning of the chunks. The default is a lambda function that always returns `True`, meaning it will take all elements.
 
