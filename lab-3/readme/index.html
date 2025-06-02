@@ -812,16 +812,20 @@ points to a specific CSV file containing energy consumption data for Spain, with
 <p>In summary, the code snippet creates a figure with a grid of subplots, one for each target column, and plots the time series data for each target column on its corresponding subplot. This visualization helps to compare the trends and patterns in the target columns over time.</p>
 <h3 id="set-up-zero-shot-model">Set up zero shot model<a class="headerlink" href="#set-up-zero-shot-model" title="Permanent link">&para;</a></h3>
 <p>The TTM model is hosted on <a href="https://huggingface.co/ibm-granite/granite-timeseries-ttm-v1">Hugging Face</a>, and is retrieved by the wrapper, <code>TinyTimeMixerForPrediction</code>. We have one input channel in this example.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># Instantiate the model.</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Instantiate the model.</span>
 <span class="n">zeroshot_model</span> <span class="o">=</span> <span class="n">TinyTimeMixerForPrediction</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
     <span class="s2">&quot;ibm-granite/granite-timeseries-ttm-r2&quot;</span><span class="p">,</span>  <span class="c1"># Name of the model on Hugging Face</span>
     <span class="n">num_input_channels</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">target_columns</span><span class="p">),</span>  <span class="c1"># tsp.num_input_channels</span>
 <span class="p">)</span>
 </code></pre></div>
-1. <code>TinyTimeMixerForPrediction.from_pretrained()</code>: This method is used to instantiate a pre-trained TinyTimeMixer model from the Hugging Face Model Hub. The method takes the following arguments:<br />
-    * <code>"ibm-granite/granite-timeseries-ttm-r2"</code>: The name of the pre-trained model on the Hugging Face Model Hub. In this case, it is the TinyTimeMixer model pre-trained on time series data by IBM Granite.<br />
-    * <code>num_input_channels</code>: The number of input channels in the time series data. This value is set to the length of the <code>target_columns</code> list, indicating that the model will process multiple target columns as separate input channels.<br />
-2. <code>zeroshot_model = TinyTimeMixerForPrediction.from_pretrained(...)</code>: This line instantiates the pre-trained TinyTimeMixer model and assigns it to the <code>zeroshot_model</code> variable. The model is now ready to be used for forecasting tasks.  </p>
+<ol>
+<li><code>TinyTimeMixerForPrediction.from_pretrained()</code>: This method is used to instantiate a pre-trained TinyTimeMixer model from the Hugging Face Model Hub. The method takes the following arguments:  <ul>
+<li><code>"ibm-granite/granite-timeseries-ttm-r2"</code>: The name of the pre-trained model on the Hugging Face Model Hub. In this case, it is the TinyTimeMixer model pre-trained on time series data by IBM Granite.  </li>
+<li><code>num_input_channels</code>: The number of input channels in the time series data. This value is set to the length of the <code>target_columns</code> list, indicating that the model will process multiple target columns as separate input channels.  </li>
+</ul>
+</li>
+<li><code>zeroshot_model = TinyTimeMixerForPrediction.from_pretrained(...)</code>: This line instantiates the pre-trained TinyTimeMixer model and assigns it to the <code>zeroshot_model</code> variable. The model is now ready to be used for forecasting tasks.  </li>
+</ol>
 <p>In summary, the code snippet instantiates a pre-trained TinyTimeMixer model from the Hugging Face Model Hub, specifying the number of input channels based on the number of target columns in the dataset. The instantiated model is stored in the <code>zeroshot_model</code> variable and can be used for generating forecasts.</p>
 <h3 id="create-a-forecasting-pipeline">Create a forecasting pipeline<a class="headerlink" href="#create-a-forecasting-pipeline" title="Permanent link">&para;</a></h3>
 <p>Set up the forecasting pipeline with the model, setting <code>frequency</code> given our knowledge of the sample frequency. In this example we set <code>explode_forecasts</code> to <code>False</code>, which keeps each sequence of predictions in a list within the dataframe cells. We then make a forecast on the dataset.</p>
