@@ -133,6 +133,7 @@ except Exception:  # Use Replicate for the model
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 
 ```
+
 1. `model_path = "ibm-granite/granite-3.2-8b-instruct"`: This line assigns the string `"ibm-granite/granite-3.2-8b-instruct"` to the `model_path` variable. This is the name of the pre-trained model on the Hugging Face Model Hub that will be used for the language model.  
 2. `try:`: This line starts a try block, which is used to handle exceptions that may occur during the execution of the code within the block.  
 3. `response = requests.get(os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434"))`: This line sends a GET request to the Ollama server using the `requests.get()` function. The server address is obtained from the `OLLAMA_HOST` environment variable. If the environment variable is not set, the default address `http://127.0.0.1:11434` is used.  
@@ -231,6 +232,7 @@ for doc in docs:
     print(doc)
     print("=" * 80)  # Separator for clarity
 ```
+
 1. `query = "What did the president say about Ketanji Brown Jackson?"`: This line assigns the string `"What did the president say about Ketanji Brown Jackson?"` to the `query` variable. This is the search query that will be used to find relevant documents in the vector database.  
 2. `docs = vector_db.similarity_search(query)`: This line calls the `similarity_search()` method of the `vector_db` object, passing the `query` as an argument. The method returns a list of documents that are most similar to the query based on the vector representations of the documents in the vector database.  
 3. `print(f"{len(docs)} documents returned")`: This line prints the number of documents returned by the `similarity_search()` method. The `len()` function is used to determine the length of the `docs` list.  
@@ -291,6 +293,7 @@ rag_chain = create_retrieval_chain(
     combine_docs_chain=combine_docs_chain,
 )
 ```
+
 1. `from langchain.prompts import PromptTemplate`: This line imports the `PromptTemplate` class from the `langchain.prompts` module. This class is used to create custom prompt templates for language models.  
 2. `from langchain.chains.retrieval import create_retrieval_chain`: This line imports the `create_retrieval_chain()` function from the `langchain.chains.retrieval` module. This function is used to create a retrieval-augmented generation (RAG) chain, which combines a retrieval component (e.g., a vector database) with a language model for generating context-aware responses.  
 3. `from langchain.chains.combine_documents import create_stuff_documents_chain`: This line imports the `create_stuff_documents_chain()` function from the `langchain.chains.combine_documents` module. This function is used to create a chain that combines multiple retrieved documents into a single input for the language model.  
@@ -315,6 +318,7 @@ output = rag_chain.invoke({"input": query})
 
 print(output['answer'])
 ```
+
 1. `output = rag_chain.invoke({"input": query})`: This line invokes the RAG chain with the input query. The `invoke()` method takes a dictionary as an argument, where the key is `"input"` and the value is the `query` string. The method returns a dictionary containing the output of the RAG chain, which includes the generated answer.  
 2. `print(output['answer'])`: This line prints the generated answer from the RAG chain output. The `output` dictionary is accessed using the key `'answer'`, which corresponds to the generated answer in the RAG chain's response.  
 

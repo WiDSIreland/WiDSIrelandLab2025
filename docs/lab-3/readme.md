@@ -147,6 +147,7 @@ zeroshot_model = TinyTimeMixerForPrediction.from_pretrained(
     num_input_channels=len(target_columns),  # tsp.num_input_channels
 )
 ```
+
 1. `TinyTimeMixerForPrediction.from_pretrained()`: This method is used to instantiate a pre-trained TinyTimeMixer model from the Hugging Face Model Hub. The method takes the following arguments:  
 	* `"ibm-granite/granite-timeseries-ttm-r2"`: The name of the pre-trained model on the Hugging Face Model Hub. In this case, it is the TinyTimeMixer model pre-trained on time series data by IBM Granite.  
 	* `num_input_channels`: The number of input channels in the time series data. This value is set to the length of the `target_columns` list, indicating that the model will process multiple target columns as separate input channels.  
